@@ -1,7 +1,7 @@
 // "use client";
 // import React, { useState } from "react";
 import { lusitana } from "@/app/ui/fonts";
-import { Revenue } from "@/app/lib/definitions";
+// import { Revenue } from "@/app/lib/definitions";
 import { generateYAxis } from "@/app/lib/utils";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import {
@@ -16,7 +16,7 @@ import {
   Legend,
   ArcElement, // Для кругової діаграми
 } from "chart.js";
-import { Bar, Line, Pie } from "react-chartjs-2";
+// import { Bar, Line, Pie } from "react-chartjs-2";
 import { fetchRevenue } from "@/app/lib/data";
 
 ChartJS.register(BarElement, LineElement, CategoryScale, PointElement, LinearScale, ArcElement, Title, Tooltip, Legend);
@@ -29,57 +29,57 @@ export default async function RevenueChart() {
 
   // console.log(yAxisLabels);
 
-  const chartData = {
-    labels: revenue.map((month) => month.month),
-    datasets: [
-      {
-        // axis: "y",
-        label: "",
-        data: revenue.map((month) => (chartHeight / topLabel) * month.revenue),
-        backgroundColor: "rgba(75, 192, 192, 0.4)",
-        borderColor: "rgba(75, 192, 192, 1)",
-        borderWidth: 1,
+  // const chartData = {
+  //   labels: revenue.map((month) => month.month),
+  //   datasets: [
+  //     {
+  //       // axis: "y",
+  //       label: "",
+  //       data: revenue.map((month) => (chartHeight / topLabel) * month.revenue),
+  //       backgroundColor: "rgba(75, 192, 192, 0.4)",
+  //       borderColor: "rgba(75, 192, 192, 1)",
+  //       borderWidth: 1,
 
-        //   options: {
-        //     scales: {
-        //         y: {
-        //             ticks: {
-        //                 callback: function({100}, index, ticks) {
-        //                     return '$' + 100;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-      },
-    ],
-  };
+  //       //   options: {
+  //       //     scales: {
+  //       //         y: {
+  //       //             ticks: {
+  //       //                 callback: function({100}, index, ticks) {
+  //       //                     return '$' + 100;
+  //       //                 }
+  //       //             }
+  //       //         }
+  //       //     }
+  //       // }
+  //     },
+  //   ],
+  // };
 
-  const pieChartData = {
-    labels: revenue.map((month) => month.month),
-    datasets: [
-      {
-        data: revenue.map((month) => (chartHeight / topLabel) * month.revenue),
-        backgroundColor: [
-          "rgba(75, 192, 192, 0.4)",
-          "rgba(255, 99, 132, 0.4)",
-          "rgba(54, 162, 235, 0.4)",
-          "rgba(255, 159, 64, 0.4)",
-          "rgba(153, 102, 255, 0.4)",
-          "rgba(255, 159, 64, 0.4)",
-        ],
-        borderColor: [
-          "rgba(75, 192, 192, 1)",
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 159, 64, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
+  // const pieChartData = {
+  //   labels: revenue.map((month) => month.month),
+  //   datasets: [
+  //     {
+  //       data: revenue.map((month) => (chartHeight / topLabel) * month.revenue),
+  //       backgroundColor: [
+  //         "rgba(75, 192, 192, 0.4)",
+  //         "rgba(255, 99, 132, 0.4)",
+  //         "rgba(54, 162, 235, 0.4)",
+  //         "rgba(255, 159, 64, 0.4)",
+  //         "rgba(153, 102, 255, 0.4)",
+  //         "rgba(255, 159, 64, 0.4)",
+  //       ],
+  //       borderColor: [
+  //         "rgba(75, 192, 192, 1)",
+  //         "rgba(255, 99, 132, 1)",
+  //         "rgba(54, 162, 235, 1)",
+  //         "rgba(255, 159, 64, 1)",
+  //         "rgba(153, 102, 255, 1)",
+  //         "rgba(255, 159, 64, 1)",
+  //       ],
+  //       borderWidth: 1,
+  //     },
+  //   ],
+  // };
 
   if (!revenue || !revenue.length) {
     return <p className="mt-4 text-gray-400">No data available</p>;

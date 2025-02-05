@@ -8,7 +8,7 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
-import { resolve } from 'path';
+// import { resolve } from 'path';
 
 export async function fetchRevenue() {
   try {
