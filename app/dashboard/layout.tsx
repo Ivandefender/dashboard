@@ -12,6 +12,7 @@ export default function Layout({
             <SideNav />
         </div>
         <div className="flex-grow p-6 md:p-12 md:overflow-y-auto">{children}</div>
+        {/* <div className="flex-grow p-6 md:p-12 md:overflow-y-auto">{children}</div> */}
     </div>
   );
 }
